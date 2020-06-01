@@ -5,7 +5,7 @@ class Pokemon:
     myIDNum = 0
 
     myTypes = [0, 0]
-    myMoves = [0, 0, 0, 0]
+    myMoves = Move[0, 0, 0, 0]
 
     myBaseStats = [0, 0, 0, 0, 0, 0,]
 
