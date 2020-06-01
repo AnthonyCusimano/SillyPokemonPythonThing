@@ -1,3 +1,5 @@
+from Moves import *
+
 class Pokemon:
     myName = ''
     myIDNum = 0
@@ -14,3 +16,8 @@ class Pokemon:
             #grass flying
             self.myTypes[0] = 2
             self.myTypes[1] = 11
+
+            self.myMoves[0] = Move(73)
+            self.myMoves[1] = Move(79)
+            self.myMoves[2] = Move(369)
+            self.myMoves[3] = Move(512)
