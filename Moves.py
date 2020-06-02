@@ -29,6 +29,15 @@ class Move:
             self.myBasePower = 0
             self.myAccuracy = 75
 
+        elif self.myIDNum == 94:
+            self.myName = "Phychic"
+
+            self.myType = 13 #phychic
+            self.myDamageType = 2 #special
+
+            self.myBasePower = 90
+            self.myAccuracy = 100
+
         elif self.myIDNum == 369:
             self.myName = "U-turn"
 
@@ -38,10 +47,29 @@ class Move:
             self.myBasePower = 70
             self.myAccuracy = 100
 
+        elif self.myIDNum == 412:
+            self.myName = "Energy Ball"
+
+            self.myType = 11 #grass
+            self.myDamageType = 2 #special
+
+            self.myBasePower = 90
+            self.myAccuracy = 100
+
         elif self.myIDNum == 512:
             self.myName = "acrobatics"
 
-            self.myBasePower = 55
-
             self.myType = 1 #flying
             self.myDamageType = 1 #physical
+
+            self.myBasePower = 55
+            self.myAccuracy = 100
+
+        elif self.myIDNum == 585:
+            self.myName = "Moonblast"
+
+            self.myType = 17 #fairy
+            self.myDamageType = 2 #special
+
+            self.myBasePower = 95
+            self.myAccuracy = 100
