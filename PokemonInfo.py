@@ -7,7 +7,7 @@ class Pokemon:
     myTypes = [0, 0]
     myMoves = Move[0, 0, 0, 0]
 
-    myBaseStats = [0, 0, 0, 0, 0, 0,]
+    myBaseStats = [0, 0, 0, 0, 0, 0]
 
     def __init__(self, _name):
         self.myName = _name
