@@ -1,5 +1,6 @@
 from Moves import Move
 
+
 class Pokemon:
     myName = ''
     myIDNum = 0
@@ -12,8 +13,18 @@ class Pokemon:
     def __init__(self, _name):
         self.myName = _name
 
-        if self.myName == "Jumpluff":
-            #flying grass
+        if self.myName == "Poliwrath":
+            # water fighting
+            self.myTypes[0] = 10
+            self.myTypes[1] = 1
+
+            self.myMoves[0] = Move(503)
+            self.myMoves[1] = Move(509)
+            self.myMoves[2] = Move(95)
+            self.myMoves[3] = Move (182)
+
+        elif self.myName == "Jumpluff":
+            # flying grass
             self.myTypes[0] = 2
             self.myTypes[1] = 11
 
@@ -23,7 +34,7 @@ class Pokemon:
             self.myMoves[3] = Move(512)
 
         elif self.myName == "Whimsicott":
-            #grass fairy
+            # grass fairy
             self.myTypes[0] = 11
             self.myTypes[1] = 17
 
