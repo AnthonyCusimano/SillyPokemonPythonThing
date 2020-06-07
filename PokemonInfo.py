@@ -18,7 +18,6 @@ class Pokemon:
             self.myTypes[0] = 10
             self.myTypes[1] = 1
 
-            print("Poliwrath moves!!!!")
             self.myMoves[0] = Move(503)
             self.myMoves[1] = Move(509)
             self.myMoves[2] = Move(95)
@@ -29,7 +28,6 @@ class Pokemon:
             self.myTypes[0] = 2
             self.myTypes[1] = 11
 
-            print("Jumpluff moves!!!!")
             self.myMoves[0] = Move(73)
             self.myMoves[1] = Move(79)
             self.myMoves[2] = Move(369)
@@ -40,7 +38,6 @@ class Pokemon:
             self.myTypes[0] = 11
             self.myTypes[1] = 17
 
-            print("Whimsicott moves!!!!")
             self.myMoves[0] = Move(585)
             self.myMoves[1] = Move(412)
             self.myMoves[2] = Move(94)
