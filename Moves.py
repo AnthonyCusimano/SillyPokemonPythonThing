@@ -8,8 +8,8 @@ class Move:
     myBasePower = 0
     myAccuracy = 0
 
-    def __init__(self, _idNum):
-        self.myIDNum = _idNum
+    def __init__(self, _idnum):
+        self.myIDNum = _idnum
 
         if self.myIDNum == 73:
             self.myName = "Leech Seed"
@@ -47,6 +47,15 @@ class Move:
             self.myBasePower = 0
             self.myAccuracy = 60
 
+        elif self.myIDNum == 174:
+            self.myName = "Curse"
+
+            self.myType = 7  # ghost
+            self.myDamageType = 0  # status
+
+            self.myBasePower = 0
+            self.myAccuracy = 100
+
         elif self.myIDNum == 182:
             self.myName = "Protect"
 
@@ -55,6 +64,12 @@ class Move:
 
             self.myBasePower = 0
             self.myAccuracy = 100
+
+        elif self.myIDNum == 282:
+            self.myName = "Knock Off"
+
+            self.myType = 16  # dark
+            self.myDamageType = 1  # physical
 
         elif self.myIDNum == 369:
             self.myName = "U-turn"
@@ -65,6 +80,15 @@ class Move:
             self.myBasePower = 70
             self.myAccuracy = 100
 
+        elif self.myIDNum == 370:
+            self.myName = "Close Combat"
+
+            self.myType = 1  # fighting
+            self.myDamageType = 1  # physical
+
+            self.myBasePower = 120
+            self.myAccuracy = 100
+
         elif self.myIDNum == 412:
             self.myName = "Energy Ball"
 
@@ -73,6 +97,15 @@ class Move:
 
             self.myBasePower = 90
             self.myAccuracy = 100
+
+        elif self.myIDNum == 444:
+            self.myName = "Stone Edge"
+
+            self.myType = 5  # rock
+            self.myDamageType = 1  # physical
+
+            self.myBasePower = 100
+            self.myAccuracy = 80
 
         elif self.myIDNum == 503:
             self.myName = "Scald"
