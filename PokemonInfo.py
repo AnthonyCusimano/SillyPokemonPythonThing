@@ -23,6 +23,18 @@ class Pokemon:
             self.myMoves[2] = Move(95)
             self.myMoves[3] = Move(182)
 
+        elif self.myName == "Hitmonlee":
+            #fighting
+            self.myTypes[0] = 1
+            self.myTypes[1] = -1
+
+            self.myBaseStats = [50, 120, 53, 35, 110, 87]
+
+            self.myMoves[0] = Move(282)
+            self.myMoves[1] = Move(370)
+            self.myMoves[2] = Move(174)
+            self.myMoves[3] = Move(444)
+
         elif self.myName == "Jumpluff":
             # flying grass
             self.myTypes[0] = 2
