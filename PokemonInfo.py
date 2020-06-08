@@ -47,6 +47,30 @@ class Pokemon:
             self.myMoves[2] = Move(369)
             self.myMoves[3] = Move(512)
 
+        elif self.myName == "Magcargo":
+            # fire rock
+            self.myTypes[0] = 9
+            self.myTypes[1] = 5
+
+            self.myBaseStats = [60, 50, 120, 90, 80, 30]
+
+            self.myMoves[0] = Move(446)
+            self.myMoves[1] = Move(281)
+            self.myMoves[2] = Move(153)
+            self.myMoves[3] = Move(436)
+
+        elif self.myName == "Gorebyss":
+            #water
+            self.myTypes[0] = 10
+            self.myTypes[1] = -1
+
+            self.myBaseStats = [55, 84, 105, 114, 75, 52]
+
+            self.myMoves[0] = Move(58)
+            self.myMoves[1] = Move(56)
+            self.myMoves[2] = Move(504)
+            self.myMoves[3] = Move(164)
+
         elif self.myName == "Whimsicott":
             # grass fairy
             self.myTypes[0] = 11
