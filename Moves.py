@@ -11,7 +11,25 @@ class Move:
     def __init__(self, _idnum):
         self.myIDNum = _idnum
 
-        if self.myIDNum == 73:
+        if self.myIDNum == 56:
+            self.myName = "Hydropump"
+
+            self.myType = 10  # water
+            self.myDamageType = 2  # special
+
+            self.myBasePower = 110
+            self.myAccuracy = 80
+
+        elif self.myIDNum == 58:
+            self.myName = "Ice Beam"
+
+            self.myType = 14  # ice
+            self.myDamageType = 2  # special
+
+            self.myBasePower = 90
+            self.myAccuracy = 100
+
+        elif self.myIDNum == 73:
             self.myName = "Leech Seed"
 
             self.myType = 3  # grass
@@ -47,6 +65,24 @@ class Move:
             self.myBasePower = 0
             self.myAccuracy = 60
 
+        elif self.myIDNum == 153:
+            self.myName = "Explosion"
+
+            self.myType = 0  # normal
+            self.myDamageType = 1  # physical
+
+            self.myBasePower = 250
+            self.myAccuracy = 100
+
+        elif self.myIDNum == 164:
+            self.myName = "Substitute"
+
+            self.myType = 0  # normal
+            self.myDamageType = 0  # status
+
+            self.myBasePower = 0
+            self.myAccuracy = 100
+
         elif self.myIDNum == 174:
             self.myName = "Curse"
 
@@ -65,11 +101,23 @@ class Move:
             self.myBasePower = 0
             self.myAccuracy = 100
 
+        elif self.myIDNum == 281:
+            self.myName = "Yawn"
+
+            self.myType = 0  # normal
+            self.myDamageType = 0  # status
+
+            self.myBasePower = 0
+            self.myAccuracy = 100
+
         elif self.myIDNum == 282:
             self.myName = "Knock Off"
 
             self.myType = 16  # dark
             self.myDamageType = 1  # physical
+
+            self.myBasePower = 65
+            self.myAccuracy = 100
 
         elif self.myIDNum == 369:
             self.myName = "U-turn"
@@ -98,6 +146,15 @@ class Move:
             self.myBasePower = 90
             self.myAccuracy = 100
 
+        elif self.myIDNum == 436:
+            self.myName = "Lava Plume"
+
+            self.myType = 9  # fire
+            self.myDamageType = 2  # special
+
+            self.myBasePower = 80
+            self.myAccuracy = 100
+
         elif self.myIDNum == 444:
             self.myName = "Stone Edge"
 
@@ -107,6 +164,15 @@ class Move:
             self.myBasePower = 100
             self.myAccuracy = 80
 
+        elif self.myIDNum == 446:
+            self.myName = "Stealth Rock"
+
+            self.myType = 5  # rock
+            self.myDamageType = 0  # status
+
+            self.myBasePower = 0
+            self.myAccuracy = 100
+
         elif self.myIDNum == 503:
             self.myName = "Scald"
 
@@ -114,6 +180,15 @@ class Move:
             self.myDamageType = 2  # special
 
             self.myBasePower = 80
+            self.myAccuracy = 100
+
+        elif self.myIDNum == 504:
+            self.myName = "Shell Smash"
+
+            self.myType = 0  # normal
+            self.myDamageType = 0  # status
+
+            self.myBasePower = 0
             self.myAccuracy = 100
 
         elif self.myIDNum == 509:
