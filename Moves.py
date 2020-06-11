@@ -1,13 +1,5 @@
 class Move:
 
-    myName = ""
-    myIDNum = 0
-
-    myType = 0
-    myDamageType = 0
-    myBasePower = 0
-    myAccuracy = 0
-
     def __init__(self, _idnum):
         self.myIDNum = _idnum
 
