@@ -1,11 +1,10 @@
 from PokemonInfo import *
-# GITHUB
 
 
 class Trainer:
 
     def __init__(self):
-        self.myTeam = [0, 0, 0, 0, 0, 0]
+        self.myTeam = Pokemon[0, 0, 0, 0, 0, 0]
 
     # send Pokemon objects please
     def __init__(self, _guy1, _guy2, _guy3):
@@ -15,3 +14,8 @@ class Trainer:
         temp = self.myTeam[0]
         self.myTeam[0] = self.myTeam[_newGuyAddress]
         self.myTeam[_newGuyAddress] = temp
+
+    def selectMove(self, _moveID):
+        if _moveID == '1' or _moveID == 2 or _moveID == 3 or _moveID == 4:
+            print(self.myTeam[0].myMoves[_moveID].myName, "selected")
+
