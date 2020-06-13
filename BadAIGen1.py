@@ -7,7 +7,8 @@ class BadAIGen1(AI):
 
     def __init__(self):
         print("bad gen 1 AI created")
+        self.movePicked = 0
 
     def selectMove(self):
-        movePicked = random.randrange(3)
-        print(movePicked)
+        self.movePicked = random.randrange(3)
+        print(self.movePicked)
