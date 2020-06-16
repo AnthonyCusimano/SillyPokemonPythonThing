@@ -22,6 +22,8 @@ typeEffectiveness = [[1, 1, 1, 1, 1, 0.5, 1, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                      [1, 2, 1, 0.5, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 2, 2, 1]]  # fairy
 
 
+# mostly static methods pretaining to processing the effect of different pokemon attacks
+
 class CombatHandler:
 
     def __init__(self):
