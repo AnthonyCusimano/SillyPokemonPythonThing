@@ -1,6 +1,6 @@
 import random
 
-#TODO
+# TODO
 # proofread this chart maybe even format it different or something
 typeEffectiveness = [[1, 1, 1, 1, 1, 0.5, 1, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1],  # normal
                      [2, 1, 0.5, 0.5, 1, 2, 0.5, 0, 2, 1, 1, 1, 1, 0.5, 2, 1, 2, 0.5],  # fighting
@@ -22,8 +22,7 @@ typeEffectiveness = [[1, 1, 1, 1, 1, 0.5, 1, 0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                      [1, 2, 1, 0.5, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1, 1, 2, 2, 1]]  # fairy
 
 
-# mostly static methods pretaining to processing the effect of different pokemon attacks
-
+# mostly static methods pertaining to processing the effects of different pokemon attacks
 class CombatHandler:
 
     def __init__(self):
@@ -46,4 +45,13 @@ class CombatHandler:
 
     def ProcessDamage(self, _attacker, _defender, _move):
         # TODO improve :)
-        print("Damage dealt with my calc is currently ", _move.myBasePower)
+        print("_move's base power is  ", _move.myBasePower)
+        print("_attacker's attack is ", _attacker.myBaseStats[1])
+        print("_defender's defense is ", _defender.myBaseStats[3])
+        T_Damage1 = (2 * 50) + 2
+        # for now we pretend all moves are physical and target defense
+        T_Damage1 *= _move.myBasePower * (_attacker.myBaseStats[1] / _defender.myBaseStats[3])
+        T_Damage1 /= 50
+        T_Damage1 + 2
+        print(T_Damage1)
+        T_DamageMod = 1
