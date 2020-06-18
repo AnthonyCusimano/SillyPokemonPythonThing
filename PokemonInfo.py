@@ -7,6 +7,8 @@ class Pokemon:
 
         self.myName = _name
         self.myIDNum = 0
+        
+        self.myLevel = 50
 
         self.myTypes = [0, 0]
         self.myMoves = [0, 0, 0, 0]
@@ -24,7 +26,7 @@ class Pokemon:
             self.myMoves[3] = Move(182)
 
         elif self.myName == "Hitmonlee":
-            #fighting
+            # fighting
             self.myTypes[0] = 1
             self.myTypes[1] = -1
 
@@ -60,7 +62,7 @@ class Pokemon:
             self.myMoves[3] = Move(436)
 
         elif self.myName == "Gorebyss":
-            #water
+            # water
             self.myTypes[0] = 10
             self.myTypes[1] = -1
 
