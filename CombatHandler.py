@@ -48,10 +48,15 @@ class CombatHandler:
         print("_move's base power is  ", _move.myBasePower)
         print("_attacker's attack is ", _attacker.myBaseStats[1])
         print("_defender's defense is ", _defender.myBaseStats[3])
-        T_Damage1 = (2 * 50) + 2
+        T_Damage = (2 * 50) + 2
         # for now we pretend all moves are physical and target defense
-        T_Damage1 *= _move.myBasePower * (_attacker.myBaseStats[1] / _defender.myBaseStats[3])
-        T_Damage1 /= 50
-        T_Damage1 + 2
-        print(T_Damage1)
+        if _move.myDamageType == 1:
+            T_Damage *= _move.myBasePower * (_attacker.myBaseStats[1] / _defender.myBaseStats[3])
+
+        else:
+            T_Damage *= _move.myBasePower * (_attacker.myBaseStats[2] / _defender.myBaseStats[4])
+
+        T_Damage /= 50
+        T_Damage + 2
+        print(T_Damage)
         T_DamageMod = 1
