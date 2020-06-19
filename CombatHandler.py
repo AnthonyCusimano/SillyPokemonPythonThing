@@ -49,12 +49,15 @@ class CombatHandler:
         print("_attacker's attack is ", _attacker.myBaseStats[1])
         print("_defender's defense is ", _defender.myBaseStats[3])
         T_Damage = (2 * 50) + 2
-        # for now we pretend all moves are physical and target defense
+
         if _move.myDamageType == 1:
             T_Damage *= _move.myBasePower * (_attacker.myBaseStats[1] / _defender.myBaseStats[3])
 
-        else:
+        elif _move.myDamageType == 2:
             T_Damage *= _move.myBasePower * (_attacker.myBaseStats[2] / _defender.myBaseStats[4])
+
+        else:  # meaning it's a special / status move
+            return
 
         T_Damage /= 50
         T_Damage + 2
