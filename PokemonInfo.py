@@ -1,4 +1,5 @@
 from Moves import Move
+from Nature import Nature
 
 
 class Pokemon:
@@ -7,7 +8,9 @@ class Pokemon:
 
         self.myName = _name
         self.myIDNum = 0
-        
+
+        self.myNature = 0
+
         self.myLevel = 50
 
         self.myTypes = [0, 0]
@@ -41,6 +44,8 @@ class Pokemon:
             # flying grass
             self.myTypes[0] = 2
             self.myTypes[1] = 11
+
+            self.myNature = Nature(13)
 
             self.myBaseStats = [75, 55, 70, 55, 95, 110]
 
@@ -84,3 +89,11 @@ class Pokemon:
             self.myMoves[1] = Move(412)
             self.myMoves[2] = Move(94)
             self.myMoves[3] = Move(369)
+
+        # self.ApplyNature()
+
+    # for now just applying Jumpluff's jolly nature
+    def ApplyNature(self):
+        if self.myNature.myID == 13:
+            self.myBaseStats[3] *= 0.90
+            self.myBaseStats[5] *= 1.10
