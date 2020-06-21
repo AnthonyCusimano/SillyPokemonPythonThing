@@ -35,6 +35,14 @@ class CombatHandler:
         else:
             return 0
 
+    def returnCrit(self, _attacker):
+        T_Critroll = random.rangrange(24)  # need access to crit stages in battle
+        if T_Critroll == 24:
+            return 1.5
+
+        else:
+            return 1
+
     def roleAccuracy(self, _move):
         T_Role = random.randrange(1, 100)
         if T_Role <= _move.myAccuracy:
@@ -67,6 +75,8 @@ class CombatHandler:
         #TODO Adaptability (pokmemon ability) check
         if self.returnIsStab(_attacker, _move) == 1:
             T_DamageMod *= 1.5
+
+        T_DamageMod *= self.returnCrit(_attacker)
 
         T_Damage *= T_DamageMod
 
