@@ -195,7 +195,7 @@ class Move:
         elif self.myIDNum == 512:
             self.myName = "acrobatics"
 
-            self.myType = 1  # flying
+            self.myType = 2  # flying
             self.myDamageType = 1  # physical
 
             self.myBasePower = 55
