@@ -36,7 +36,7 @@ class CombatHandler:
             return 0
 
     def returnCrit(self, _attacker):
-        T_Critroll = random.rangrange(24)  # need access to crit stages in battle
+        T_Critroll = random.randrange(24)  # need access to crit stages in battle
         if T_Critroll == 24:
             return 1.5
 
