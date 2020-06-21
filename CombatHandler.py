@@ -29,7 +29,7 @@ class CombatHandler:
         print("CombatHandler default constructor called")
 
     def returnIsStab(self, _user, _move):
-        if _user.myType == _move.myType:
+        if _user.myTypes[0] == _move.myType or _user.myTypes[1] == _move.myType:
             return 1
 
         else:
@@ -61,5 +61,14 @@ class CombatHandler:
 
         T_Damage /= 50
         T_Damage + 2
+        print(T_Damage, " is damage before T_DamageMod applied")
+        T_DamageMod = random.randrange(85, 100) / 100
+
+        #TODO Adaptability (pokmemon ability) check
+        if self.returnIsStab(_attacker, _move) == 1:
+            T_DamageMod *= 1.5
+
+        T_Damage *= T_DamageMod
+
         print(T_Damage)
-        T_DamageMod = 1
+        #ignoring weather, badge, targets,
