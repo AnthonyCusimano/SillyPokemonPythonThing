@@ -1,10 +1,7 @@
-
-
 class Nature:
 
-    def __init__(self, T_ID):
-        self.myID = T_ID
-        self.myName
+    def __init__(self, _idNum):
+        self.myID = _idNum
 
         if self.myID == 0:
             self.myName = "Hardy"
