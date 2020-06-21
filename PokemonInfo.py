@@ -21,6 +21,8 @@ class Pokemon:
             self.myTypes[0] = 10
             self.myTypes[1] = 1
 
+            self.myNature = Nature(10)
+
             self.myBaseStats = [90, 95, 95, 70, 90, 70]
 
             self.myMoves[0] = Move(503)
@@ -32,6 +34,8 @@ class Pokemon:
             # fighting
             self.myTypes[0] = 1
             self.myTypes[1] = -1
+
+            self.myNature = Nature(3)
 
             self.myBaseStats = [50, 120, 53, 35, 110, 87]
 
@@ -47,8 +51,6 @@ class Pokemon:
 
             self.myNature = Nature(13)
 
-            print(self.myNature.myName)
-
             self.myBaseStats = [75, 55, 70, 55, 95, 110]
 
             self.myMoves[0] = Move(73)
@@ -56,13 +58,12 @@ class Pokemon:
             self.myMoves[2] = Move(369)
             self.myMoves[3] = Move(512)
 
-            # TODO move to outside Jumpluff to all cases
-            self.ApplyNature()
-
         elif self.myName == "Magcargo":
             # fire rock
             self.myTypes[0] = 9
             self.myTypes[1] = 5
+
+            self.myNature = Nature(20)
 
             self.myBaseStats = [60, 50, 120, 90, 80, 30]
 
@@ -76,6 +77,8 @@ class Pokemon:
             self.myTypes[0] = 10
             self.myTypes[1] = -1
 
+            self.myNature = Nature(15)
+
             self.myBaseStats = [55, 84, 105, 114, 75, 52]
 
             self.myMoves[0] = Move(58)
@@ -88,12 +91,16 @@ class Pokemon:
             self.myTypes[0] = 11
             self.myTypes[1] = 17
 
+            self.myNature = Nature(10)
+
             self.myBaseStats = [60, 67, 85, 77, 75, 116]
 
             self.myMoves[0] = Move(585)
             self.myMoves[1] = Move(412)
             self.myMoves[2] = Move(94)
             self.myMoves[3] = Move(369)
+
+        self.ApplyNature()
 
     # for now just applying Jumpluff's jolly nature
     def ApplyNature(self):
