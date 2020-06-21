@@ -47,12 +47,17 @@ class Pokemon:
 
             self.myNature = Nature(13)
 
+            print(self.myNature.myName)
+
             self.myBaseStats = [75, 55, 70, 55, 95, 110]
 
             self.myMoves[0] = Move(73)
             self.myMoves[1] = Move(79)
             self.myMoves[2] = Move(369)
             self.myMoves[3] = Move(512)
+
+            # TODO move to outside Jumpluff to all cases
+            self.ApplyNature()
 
         elif self.myName == "Magcargo":
             # fire rock
@@ -89,8 +94,6 @@ class Pokemon:
             self.myMoves[1] = Move(412)
             self.myMoves[2] = Move(94)
             self.myMoves[3] = Move(369)
-
-        # self.ApplyNature()
 
     # for now just applying Jumpluff's jolly nature
     def ApplyNature(self):
