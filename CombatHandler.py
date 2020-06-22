@@ -27,6 +27,8 @@ class CombatHandler:
 
     def __init__(self):
         print("CombatHandler default constructor called")
+        self.playerCritStage = 0
+        self.enemyCritStage = 0
 
     def returnIsStab(self, _user, _move):
         if _user.myTypes[0] == _move.myType or _user.myTypes[1] == _move.myType:
@@ -35,10 +37,35 @@ class CombatHandler:
         else:
             return 0
 
-    def returnCrit(self, _attacker):
-        T_Critroll = random.randrange(24)  # need access to crit stages in battle
-        if T_Critroll == 24:
-            return 1.5
+    def returnCrit(self, _attacker, _boolPlayerIsAttacking):
+        T_CritRoll = random.randrange(24)  # need access to crit stages in battle
+
+        if _boolPlayerIsAttacking:
+            if self.playerCritStage == 0 and T_CritRoll == 24:
+                return 1.5
+
+            elif self.playerCritStage == 1 and T_CritRoll > 16:  # I think?
+                return 1.5
+
+            elif self.playerCritStage == 2 and T_CritRoll > 12:  # I'm pretty sure?!?!
+                return 1.5
+
+            elif self.playerCritStage == 3:
+                return 1.5
+
+        if not _boolPlayerIsAttacking:
+            if self.enemyCritStage == 0 and T_CritRoll == 24:
+                return 1.5
+
+            elif self.enemyCritStage == 1 and T_CritRoll > 16:  # I think?
+                return 1.5
+
+            elif self.enemyCritStage == 2 and T_CritRoll > 12:  # I'm pretty sure?!?!
+                return 1.5
+
+            elif self.enemyCritStage == 3:
+                return 1.5
+
 
         else:
             return 1
@@ -76,7 +103,8 @@ class CombatHandler:
         if self.returnIsStab(_attacker, _move) == 1:
             T_DamageMod *= 1.5
 
-        T_DamageMod *= self.returnCrit(_attacker)
+        # true as in player is attacking, for now
+        T_DamageMod *= self.returnCrit(_attacker, True)
 
         T_Damage *= T_DamageMod
 
