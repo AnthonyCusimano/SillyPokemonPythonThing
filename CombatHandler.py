@@ -30,6 +30,7 @@ class CombatHandler:
         self.playerCritStage = 0
         self.enemyCritStage = 0
 
+    # TODO comment
     def returnIsStab(self, _user, _move):
         if _user.myTypes[0] == _move.myType or _user.myTypes[1] == _move.myType:
             return 1
@@ -37,6 +38,7 @@ class CombatHandler:
         else:
             return 0
 
+    # TODO comment
     def returnCrit(self, _attacker, _boolPlayerIsAttacking):
         T_CritRoll = random.randrange(24)  # need access to crit stages in battle
 
@@ -70,6 +72,12 @@ class CombatHandler:
         else:
             return 1
 
+    # TODO comment
+    def CalculateTypeEffectiveness(self, _move, _attacker, _defender):
+        print("prototype method CalculateTypeEffectiveness called")
+        # leaving this blank cus I need to come up with a good way to do this using the chart above this class
+
+    # TODO comment
     def roleAccuracy(self, _move):
         T_Role = random.randrange(1, 100)
         if T_Role <= _move.myAccuracy:
@@ -78,6 +86,7 @@ class CombatHandler:
         else:
             return False
 
+    # TODO comment
     def ProcessDamage(self, _attacker, _defender, _move):
         # TODO improve :)
         print("_move's base power is  ", _move.myBasePower)
