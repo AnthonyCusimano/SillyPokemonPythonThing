@@ -89,6 +89,7 @@ class CombatHandler:
     # TODO comment
     def ProcessDamage(self, _attacker, _defender, _move):
         # TODO improve :)
+        print("_move's name is ", _move.myName)
         print("_move's base power is  ", _move.myBasePower)
         print("_attacker's attack is ", _attacker.myBaseStats[1])
         print("_defender's defense is ", _defender.myBaseStats[3])
