@@ -1,4 +1,4 @@
-import AI
+from AI import AI
 import random
 
 
@@ -11,4 +11,4 @@ class BadAIGen1(AI):
 
     def selectMove(self):
         self.movePicked = random.randrange(3)
-        print(self.movePicked)
+        return self.movePicked
