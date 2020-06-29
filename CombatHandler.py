@@ -134,3 +134,8 @@ class CombatHandler:
 
         print(T_Damage)
         #ignoring weather, badge, targets,
+
+    # TODO comment
+    def ProcessTurn(self, _actionTypeID, _action, _computer, _playerPokemon, _computerPokemon):
+        # if
+        print()
