@@ -86,6 +86,20 @@ class CombatHandler:
         else:
             return False
 
+    # currently doesn't involve switching, should it? :0
+    def DetermineSpeedOrder(self, _pokemon1, _pokemon2):
+        # return
+        if _pokemon1.myBaseStats[5] > _pokemon2.myBaseStats[5]:
+            return 0
+
+        elif _pokemon1.myBaseStats[5] < _pokemon2.myBaseStats[5]:
+            return 1
+
+        # speed tie
+        else:
+            # coinflip return
+            return random.randrange(1)
+
     # TODO comment
     def ProcessDamage(self, _attacker, _defender, _move):
         # TODO improve :)
