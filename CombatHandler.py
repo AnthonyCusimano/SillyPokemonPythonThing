@@ -136,6 +136,12 @@ class CombatHandler:
         #ignoring weather, badge, targets,
 
     # TODO comment
-    def ProcessTurn(self, _actionTypeID, _action, _computer, _playerPokemon, _computerPokemon):
-        # if
-        print()
+    def ProcessTurn(self, _actionTypeID, _actionID, _player, _computer, _playerPokemon, _computerPokemon):
+        if _actionTypeID == 0:
+            _player.swap(_actionID)
+
+        # TODO would love to use DetermineSpeedOrder here tbh
+        elif _actionTypeID == 1:
+            _player.selectMove(_actionID)
+
+        # TODO need gen1 AI to pick a move
