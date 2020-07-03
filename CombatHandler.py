@@ -142,6 +142,6 @@ class CombatHandler:
 
         # TODO would love to use DetermineSpeedOrder here tbh
         elif _actionTypeID == 1:
-            _player.selectMove(_actionID)
+            self.ProcessDamage(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
 
-        # TODO need gen1 AI to pick a move
+        self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
