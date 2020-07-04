@@ -100,6 +100,8 @@ class Pokemon:
             self.myMoves[2] = Move(94)
             self.myMoves[3] = Move(369)
 
+        self.myCurrentHealth = self.myBaseStats[0]
+
         self.ApplyNature()
 
     # for now just applying Jumpluff's jolly nature
