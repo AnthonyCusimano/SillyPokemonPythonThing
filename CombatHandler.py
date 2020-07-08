@@ -76,6 +76,12 @@ class CombatHandler:
     def CalculateTypeEffectiveness(self, _move, _attacker, _defender):
         print("prototype method CalculateTypeEffectiveness called")
         # leaving this blank cus I need to come up with a good way to do this using the chart above this class
+        T_Modifier = 1
+
+        # check for 
+
+        return T_Modifier
+
 
     # TODO comment
     def roleAccuracy(self, _move):
@@ -133,6 +139,8 @@ class CombatHandler:
         T_Damage *= T_DamageMod
 
         print(T_Damage)
+        _defender.myCurrentHealth -= T_Damage
+
         #ignoring weather, badge, targets,
 
     # TODO comment
@@ -143,5 +151,10 @@ class CombatHandler:
         # TODO would love to use DetermineSpeedOrder here tbh
         elif _actionTypeID == 1:
             self.ProcessDamage(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
+            if (_computerPokemon.myCurrentHealth > 0):
+                self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
 
-        self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
+            else:
+                print()
+                #need to link the computer and their AI
+                # _computer.
