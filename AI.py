@@ -4,3 +4,6 @@ class AI:
 
     def selectMove(self):
         pass
+
+    def swap(self):
+        pass
