@@ -12,3 +12,11 @@ class BadAIGen1(AI):
     def selectMove(self):
         self.movePicked = random.randrange(3)
         return self.movePicked
+
+    #test this LOLE
+    def swap(self, _myParty):
+        for x in _myParty:
+            if _myParty[x].myCurrentHealth > 0:
+                temp = self.myTeam[0]
+                self.myTeam[0] = _myParty[x]
+                _myParty[x] = temp
