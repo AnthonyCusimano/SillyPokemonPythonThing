@@ -76,7 +76,10 @@ class CombatHandler:
     def CalculateTypeEffectiveness(self, _move, _attacker, _defender):
         print("prototype method CalculateTypeEffectiveness called")
         # leaving this blank cus I need to come up with a good way to do this using the chart above this class
-        T_Modifier = 1
+        T_Modifier = typeEffectiveness[_move.myType][_defender.myTypes[0]]
+
+        if _defender.myTypes[2] != -1:
+            T_Modifier *= typeEffectiveness[_move.myType][_defender.myTypes[1]]
 
         # check for 
 
@@ -105,6 +108,13 @@ class CombatHandler:
         else:
             # coinflip return
             return random.randrange(1)
+
+    def MoveSecondaryAffect(self, _move, _attacker, _defender):
+        #sleep powder
+        if _move.myIDNum == 79:
+            T_AccRole = self.roleAccuracy(_move)
+            if T_AccRole > 69:
+                print("TODO make it so pokemon can be put to sleep LOLE")
 
     # TODO comment
     def ProcessDamage(self, _attacker, _defender, _move):
