@@ -112,9 +112,7 @@ class CombatHandler:
     def MoveSecondaryAffect(self, _move, _attacker, _defender):
         #sleep powder
         if _move.myIDNum == 79:
-            T_AccRole = self.roleAccuracy(_move)
-            if T_AccRole > 69:
-                print("TODO make it so pokemon can be put to sleep LOLE")
+            _defender.myPrimaryStatus = 2
 
     # TODO comment
     def ProcessDamage(self, _attacker, _defender, _move):
