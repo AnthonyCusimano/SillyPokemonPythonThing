@@ -149,7 +149,7 @@ class CombatHandler:
         print(T_Damage)
         _defender.myCurrentHealth -= T_Damage
 
-        #ignoring weather, badge, targets,
+        # ignoring weather, badge, targets,
 
     # TODO comment
     def ProcessTurn(self, _actionTypeID, _actionID, _player, _computer, _playerPokemon, _computerPokemon):
@@ -158,11 +158,23 @@ class CombatHandler:
 
         # TODO would love to use DetermineSpeedOrder here tbh
         elif _actionTypeID == 1:
+
+            if _playerPokemon.myPrimaryStatus == 1:
+                print("paralysis check here pls")
+
+            elif _playerPokemon.myPrimaryStatus == 2:
+                print("wake up check here pls")
+
+            elif _playerPokemon.myPrimaryStatus == 6:
+                print("thaw check here pls")
+
             self.ProcessDamage(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
             if (_computerPokemon.myCurrentHealth > 0):
                 self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
 
             else:
                 print()
-                #need to link the computer and their AI
+                # need to link the computer and their AI
                 # _computer.
+
+            print("Need poison, bad poison, and burn checks at the end of ProcessTurn")
