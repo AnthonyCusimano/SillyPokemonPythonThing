@@ -87,7 +87,7 @@ class CombatHandler:
 
 
     # TODO comment
-    def roleAccuracy(self, _move):
+    def rollAccuracy(self, _move):
         T_Role = random.randrange(1, 100)
         if T_Role <= _move.myAccuracy:
             return True
@@ -158,12 +158,29 @@ class CombatHandler:
 
         # TODO would love to use DetermineSpeedOrder here tbh
         elif _actionTypeID == 1:
+            T_PlayerAttackPossible = True
+            T_ComputerAttackPossible = True
 
             if _playerPokemon.myPrimaryStatus == 1:
                 print("paralysis check here pls")
+                T_ParCheck = self.rollAccuracy()
+                if T_ParCheck > 50:
+                    print("lole ur paralyze lole!")
+                    T_PlayerAttackPossible = False
+
+                else:
+                    print("you're attack is going off even though you're paralized, lucky :)")
 
             elif _playerPokemon.myPrimaryStatus == 2:
-                print("wake up check here pls")
+                if _playerPokemon.myTurnsSleeping == _playerPokemon.mySleepTarget:
+                    # waking up
+                    _playerPokemon.myPrimaryStatus = 0
+                    _playerPokemon.myTurnsSleeping = _playerPokemon.mySleepTarget = 0
+                    print(_playerPokemon.myName, " woke up!!!!!!!!!!!!!!")
+
+                else:
+                    ++_playerPokemon.myTurnsSleeping
+                    T_PlayerAttackPossible = False
 
             elif _playerPokemon.myPrimaryStatus == 6:
                 print("thaw check here pls")
