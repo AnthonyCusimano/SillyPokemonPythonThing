@@ -95,6 +95,9 @@ class CombatHandler:
         else:
             return False
 
+    def rollD100(self):
+        return random.randrange(1, 100)
+
     # currently doesn't involve switching, should it? :0
     def DetermineSpeedOrder(self, _pokemon1, _pokemon2):
         # return
@@ -161,9 +164,9 @@ class CombatHandler:
             T_PlayerAttackPossible = True
             T_ComputerAttackPossible = True
 
+            # paralyze
             if _playerPokemon.myPrimaryStatus == 1:
-                print("paralysis check here pls")
-                T_ParCheck = self.rollAccuracy()
+                T_ParCheck = self.rollD100()
                 if T_ParCheck > 50:
                     print("lole ur paralyze lole!")
                     T_PlayerAttackPossible = False
@@ -171,6 +174,7 @@ class CombatHandler:
                 else:
                     print("you're attack is going off even though you're paralized, lucky :)")
 
+            # sleep
             elif _playerPokemon.myPrimaryStatus == 2:
                 if _playerPokemon.myTurnsSleeping == _playerPokemon.mySleepTarget:
                     # waking up
@@ -182,8 +186,15 @@ class CombatHandler:
                     ++_playerPokemon.myTurnsSleeping
                     T_PlayerAttackPossible = False
 
+            # freeze
             elif _playerPokemon.myPrimaryStatus == 6:
-                print("thaw check here pls")
+                T_ThawCheck = self.rollD100()
+                if T_ThawCheck > 80:
+                    _playerPokemon.myPrimaryStatus = 0
+
+                else:
+                    print("Still frozen :)")
+                    T_PlayerAttackPossible = False
 
             self.ProcessDamage(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
             if (_computerPokemon.myCurrentHealth > 0):
