@@ -155,7 +155,7 @@ class CombatHandler:
         # ignoring weather, badge, targets,
 
     # TODO comment
-    def ProcessTurn(self, _actionTypeID, _actionID, _player, _computer, _playerPokemon, _computerPokemon):
+    def ProcessTurn(self, _actionTypeID, _actionID, _player, _computer, _computerAI, _playerPokemon, _computerPokemon):
         if _actionTypeID == 0:
             _player.swap(_actionID)
 
@@ -196,13 +196,14 @@ class CombatHandler:
                     print("Still frozen :)")
                     T_PlayerAttackPossible = False
 
-            self.ProcessDamage(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
-            if (_computerPokemon.myCurrentHealth > 0):
-                self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
+            if T_PlayerAttackPossible:
+                self.ProcessDamage(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
+                if (_computerPokemon.myCurrentHealth > 0 and T_ComputerAttackPossible):
+                    self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
 
-            else:
-                print()
-                # need to link the computer and their AI
-                # _computer.
+           # else:
+            self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
+            if (_playerPokemon.myCurrentHealth > 0 and T_PlayerAttackPossible):
+                self.ProcessDamage(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
 
             print("Need poison, bad poison, and burn checks at the end of ProcessTurn")
