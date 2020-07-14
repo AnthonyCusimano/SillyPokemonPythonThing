@@ -9,9 +9,10 @@ class BadAIGen1(AI):
         print("bad gen 1 AI created")
         self.movePicked = 0
 
-    def selectMove(self):
+    def selectMove(self, _pokemon):
         self.movePicked = random.randrange(3)
-        return self.movePicked
+        _pokemon.myMoves[self.movePicked].myName
+        return _pokemon.myMoves[self.movePicked]  # self.movePicked
 
     #test this LOLE
     def swap(self, _myParty):
