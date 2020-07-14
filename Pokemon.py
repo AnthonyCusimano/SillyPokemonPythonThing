@@ -1,6 +1,6 @@
 # from PokemonInfo import *
 from Trainer import *
-#import Trainer
+# import Trainer
 from BadAIGen1 import BadAIGen1
 # from Moves import Move
 from CombatHandler import *
@@ -19,9 +19,13 @@ print(player.myTeam[0].myBaseStats[5])
 mover = int(input())
 
 player.selectMove(mover)
+# replace ProcessDamage calls with "Process turn"
 
-Gamer.ProcessDamage(player.myTeam[0], computer.myTeam[0], player.myTeam[0].myMoves[mover])
+# Gamer.ProcessDamage(player.myTeam[0], computer.myTeam[0], player.myTeam[0].myMoves[mover])
 
 # T_SelectedMove = computer.selectMove()
 
-Gamer.ProcessDamage(computer.myTeam[0], player.myTeam[0], computer.myTeam[0].myMoves[GamerAI.selectMove()])
+# Gamer.ProcessDamage(computer.myTeam[0], player.myTeam[0], computer.myTeam[0].myMoves[GamerAI.selectMove()])
+
+while ((player.myTeam[0].myCurrentHealth != 0 and player.myTeam[1].myCurrentHealth != 0 and player.myTeam[2].myCurrentHealth != 0) or (computer.myTeam[0].myCurrentHealth != 0 and computer.myTeam[1].myCurrentHealth != 0 and computer.myTeam[2].myCurrentHealth != 0)):
+    print("infinite monkaS")
