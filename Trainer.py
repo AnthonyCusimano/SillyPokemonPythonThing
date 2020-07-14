@@ -20,4 +20,5 @@ class Trainer:
     def selectMove(self, _moveID):
         if _moveID == '1' or _moveID == 2 or _moveID == 3 or _moveID == 4:
             print(self.myTeam[0].myMoves[_moveID].myName, "selected")
+            return self.myTeam[0].myMoves[_moveID]
 
