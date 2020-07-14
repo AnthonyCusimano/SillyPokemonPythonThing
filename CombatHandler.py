@@ -113,7 +113,7 @@ class CombatHandler:
             return random.randrange(1)
 
     def MoveSecondaryAffect(self, _move, _attacker, _defender):
-        #sleep powder
+        # sleep powder
         if _move.myIDNum == 79:
             _defender.myPrimaryStatus = 2
 
@@ -159,10 +159,11 @@ class CombatHandler:
         if _actionTypeID == 0:
             _player.swap(_actionID)
 
-        # TODO would love to use DetermineSpeedOrder here tbh
         elif _actionTypeID == 1:
             T_PlayerAttackPossible = True
             T_ComputerAttackPossible = True
+
+            T_Order = self.DetermineSpeedOrder(_playerPokemon, _computerPokemon)
 
             # paralyze
             if _playerPokemon.myPrimaryStatus == 1:
@@ -201,9 +202,10 @@ class CombatHandler:
                 if (_computerPokemon.myCurrentHealth > 0 and T_ComputerAttackPossible):
                     self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
 
-           # else:
-            self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
+            # else:
+            self.ProcessDamage(_computerPokemon, _playerPokemon, _computerAI.selectMove(_computerPokemon))
             if (_playerPokemon.myCurrentHealth > 0 and T_PlayerAttackPossible):
                 self.ProcessDamage(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
 
+            # TODO
             print("Need poison, bad poison, and burn checks at the end of ProcessTurn")
