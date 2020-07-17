@@ -154,6 +154,10 @@ class CombatHandler:
 
         # ignoring weather, badge, targets,
 
+    def ProcessMove(self, _attacker, _defender, _move):
+        self.ProcessDamage(_move)
+        self.MoveSecondaryAffect(_move)
+
     # TODO comment
     def ProcessTurn(self, _actionTypeID, _actionID, _player, _computer, _computerAI, _playerPokemon, _computerPokemon):
         if _actionTypeID == 0:
@@ -165,7 +169,7 @@ class CombatHandler:
 
             T_Order = self.DetermineSpeedOrder(_playerPokemon, _computerPokemon)
 
-            # paralyze
+            # paralyze  
             if _playerPokemon.myPrimaryStatus == 1:
                 T_ParCheck = self.rollD100()
                 if T_ParCheck > 50:
@@ -198,14 +202,14 @@ class CombatHandler:
                     T_PlayerAttackPossible = False
 
             if T_PlayerAttackPossible:
-                self.ProcessDamage(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
+                self.ProcessMove(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
                 if (_computerPokemon.myCurrentHealth > 0 and T_ComputerAttackPossible):
                     self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
 
             # else:
-            self.ProcessDamage(_computerPokemon, _playerPokemon, _computerAI.selectMove(_computerPokemon))
+            self.ProcessMove(_computerPokemon, _playerPokemon, _computerAI.selectMove(_computerPokemon))
             if (_playerPokemon.myCurrentHealth > 0 and T_PlayerAttackPossible):
-                self.ProcessDamage(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
+                self.ProcessMove(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
 
             # TODO
             print("Need poison, bad poison, and burn checks at the end of ProcessTurn")
