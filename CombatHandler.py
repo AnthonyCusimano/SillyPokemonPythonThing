@@ -163,13 +163,22 @@ class CombatHandler:
         if _actionTypeID == 0:
             _player.swap(_actionID)
 
+            # TODO
+            # comp attacks still LOLE!
+
         elif _actionTypeID == 1:
             T_PlayerAttackPossible = True
             T_ComputerAttackPossible = True
 
+            T_ComputerPrio = 0
+            T_PlayerPrio = 0
+
+            # TODO
+            # determinePrio needs to exist eventually
+
             T_Order = self.DetermineSpeedOrder(_playerPokemon, _computerPokemon)
 
-            # paralyze  
+            # paralyze
             if _playerPokemon.myPrimaryStatus == 1:
                 T_ParCheck = self.rollD100()
                 if T_ParCheck > 50:
@@ -200,6 +209,12 @@ class CombatHandler:
                 else:
                     print("Still frozen :)")
                     T_PlayerAttackPossible = False
+
+            if _computerPokemon.myPrimaryStatus == 1:
+                T_ParCheck = self.rollD100()
+                if T_ParCheck > 50:
+                    print("computer is paralyzed LOLE!!!!!")
+                    T_ComputerAttackPossible = False
 
             if T_PlayerAttackPossible:
                 self.ProcessMove(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
