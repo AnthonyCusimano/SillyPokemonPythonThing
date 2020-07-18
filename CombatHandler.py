@@ -113,9 +113,39 @@ class CombatHandler:
             return random.randrange(1)
 
     def MoveSecondaryAffect(self, _move, _attacker, _defender):
+
+        # ice beam
+        if _move.myIDNum == 58:
+            T_DieRoll = self.rollD100()
+            # 10%
+            if T_DieRoll > 90:
+                _defender.myPrimaryStatus = 6
+
+        # leech seed
+        if _move.myIDNum == 73:
+            _defender.isSeeded = True
+
         # sleep powder
         if _move.myIDNum == 79:
             _defender.myPrimaryStatus = 2
+
+        # Psychic
+        if _move.myIDNum == 94:
+            T_DieRoll = self.rollD100()
+            # 10%
+            if T_DieRoll > 90:
+                print("please lower defender's special defense by one stage, I still don't know what that means LOLE")
+
+        # hypnosis
+        elif _move.myIDNum == 95:
+            _defender.myPrimaryStatus = 2
+
+        # substitute
+        elif _move.myIDNum == 164:
+            print("bro why did I even put substitute in this thing")
+            
+        elif _move.myIDNum == 282:
+            print("knockoff currently doing nothing because Items aren't in the game yet lole")
 
     # TODO comment
     def ProcessDamage(self, _attacker, _defender, _move):
