@@ -130,6 +130,7 @@ class CombatHandler:
             _defender.myPrimaryStatus = 2
 
         # Psychic
+        # TODO
         if _move.myIDNum == 94:
             T_DieRoll = self.rollD100()
             # 10%
@@ -140,12 +141,49 @@ class CombatHandler:
         elif _move.myIDNum == 95:
             _defender.myPrimaryStatus = 2
 
+        # TODO
         # substitute
         elif _move.myIDNum == 164:
             print("bro why did I even put substitute in this thing")
-            
+
+        # Yawn
+        elif _move.myIDNum == 281:
+            _defender.isDrowsy = True
+
+        # TODO
+        # knockoff
         elif _move.myIDNum == 282:
             print("knockoff currently doing nothing because Items aren't in the game yet lole")
+
+        # TODO
+        # uturn
+        elif _move.myIDNum == 369:
+            print("Need access to Trainer.swap method so uturn can do the turn part")
+
+        # close combat
+        # TODO LOLE THIS SUCKS
+        elif _move.myIDNum == 370:
+            --_attacker.myBaseStats[2]
+            --_attacker.myBaseStats[4]
+
+        # stealth rocks
+        # TODO
+        elif _move.myIDNum == 446:
+            print("Need defender's trainer to stealth rock it up")
+
+        # scald
+        elif _move.myIDNum == 503:
+            _defender.myPrimaryStatus = 5
+
+        # shell smash
+        # TODO
+        elif _move.myIDNum == 504:
+            print ("shell smash")
+
+        # circle throw
+        # TODO
+        elif _move.myIDNum == 509:
+            print ("circle throw")
 
     # TODO comment
     def ProcessDamage(self, _attacker, _defender, _move):
