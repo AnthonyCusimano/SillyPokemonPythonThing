@@ -7,6 +7,7 @@ class Trainer:
     def __init__(self):
         self.myTeam = Pokemon[0, 0, 0, 0, 0, 0]
         self.isSeeded = False
+        self.stealthRock = False
 
     # send Pokemon objects please
     def __init__(self, _guy1, _guy2, _guy3):
@@ -14,6 +15,7 @@ class Trainer:
 
     def swap(self, _newGuyAddress):
         if self.myTeam[_newGuyAddress].myCurrentHealth > 0:
+            self.myTeam[0].isDrowsy = False
             self.isSeeded = False
             temp = self.myTeam[0]
             self.myTeam[0] = self.myTeam[_newGuyAddress]
