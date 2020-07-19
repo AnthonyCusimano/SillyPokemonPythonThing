@@ -16,9 +16,13 @@ class Pokemon:
         self.myTypes = [0, 0]
         self.myMoves = [0, 0, 0, 0]
 
+        self.myTurnsSleeping = 0
+        self.mySleepTarget = 0
+
         # normal, paralyzed(1), asleep(2), poisoned(3), bad poisoned(4), burned(5), frozen(6)
         self.myPrimaryStatus = 0
         self.isConfused = False
+        self.isDrowsy = False
 
         if self.myName == "Poliwrath":
             # water fighting
