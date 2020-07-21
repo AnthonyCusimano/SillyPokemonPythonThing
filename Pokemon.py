@@ -39,7 +39,10 @@ while ((player.myTeam[0].myCurrentHealth != 0 and player.myTeam[1].myCurrentHeal
 
     if mover == 0:
         print("1: ", player.myTeam[1].myName, " ", player.myTeam[1].myCurrentHealth, "/", player.myTeam[1].myBaseStats[0])
-        print("2: ", player.myTeam[2].myName, " ",player.myTeam[2].myCurrentHealth, "/", player.myTeam[2].myBaseStats[0])
+        print("2: ", player.myTeam[2].myName, " ", player.myTeam[2].myCurrentHealth, "/", player.myTeam[2].myBaseStats[0])
 
     moveModifier = int(input())
     Gamer.ProcessTurn(mover, moveModifier, player, computer, GamerAI, player.myTeam[0], computer.myTeam[0])
+
+# TODO
+print("Battle over I guess : D")
