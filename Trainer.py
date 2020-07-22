@@ -14,7 +14,7 @@ class Trainer:
         self.myTeam = [Pokemon(_guy1), Pokemon(_guy2), Pokemon(_guy3), 0, 0, 0]
 
     def swap(self, _newGuyAddress):
-        if self.myTeam[_newGuyAddress].myCurrentHealth > 0:
+        if self.myTeam[_newGuyAddress].myCurrentHealth > 0 and 0 < _newGuyAddress < 3:
             self.myTeam[0].isDrowsy = False
             self.isSeeded = False
             temp = self.myTeam[0]
