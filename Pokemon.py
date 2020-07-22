@@ -28,9 +28,8 @@ print(player.myTeam[0].myBaseStats[5])
 # Gamer.ProcessDamage(computer.myTeam[0], player.myTeam[0], computer.myTeam[0].myMoves[GamerAI.selectMove()])
 
 # TODO
-# you can swap to the same pokemon
 # you cannot select a different action
-while ((player.myTeam[0].myCurrentHealth != 0 and player.myTeam[1].myCurrentHealth != 0 and player.myTeam[2].myCurrentHealth != 0) or (computer.myTeam[0].myCurrentHealth != 0 and computer.myTeam[1].myCurrentHealth != 0 and computer.myTeam[2].myCurrentHealth != 0)):
+while (player.myTeam[0].myCurrentHealth != 0 and player.myTeam[1].myCurrentHealth != 0 and player.myTeam[2].myCurrentHealth != 0) or (computer.myTeam[0].myCurrentHealth != 0 and computer.myTeam[1].myCurrentHealth != 0 and computer.myTeam[2].myCurrentHealth != 0):
     print("NEW TURN WOW!!!")
     print("Enemy health is ", computer.myTeam[0].myCurrentHealth, " our of ", computer.myTeam[0].myBaseStats[0])
     print("Your health is ", player.myTeam[0].myCurrentHealth, " our of ", player.myTeam[0].myBaseStats[0])
