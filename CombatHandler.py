@@ -68,7 +68,6 @@ class CombatHandler:
             elif self.enemyCritStage == 3:
                 return 1.5
 
-
         else:
             return 1
 
@@ -223,8 +222,8 @@ class CombatHandler:
         # ignoring weather, badge, targets,
 
     def ProcessMove(self, _attacker, _defender, _move):
-        self.ProcessDamage(_move)
-        self.MoveSecondaryAffect(_move)
+        self.ProcessDamage(_attacker, _defender, _move)
+        self.MoveSecondaryAffect(_move, _attacker, _defender)
 
     # TODO comment
     def ProcessTurn(self, _actionTypeID, _actionID, _player, _computer, _computerAI, _playerPokemon, _computerPokemon):
@@ -235,6 +234,9 @@ class CombatHandler:
             # comp attacks still LOLE!
 
         elif _actionTypeID == 1:
+
+            print("actionTypeID == 1")
+
             T_PlayerAttackPossible = True
             T_ComputerAttackPossible = True
 
@@ -285,14 +287,16 @@ class CombatHandler:
                     T_ComputerAttackPossible = False
 
             if T_PlayerAttackPossible:
+                print("Attacking the comp naow")
                 self.ProcessMove(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
-                if (_computerPokemon.myCurrentHealth > 0 and T_ComputerAttackPossible):
+                if _computerPokemon.myCurrentHealth > 0 and T_ComputerAttackPossible:
                     self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
 
             # else:
             self.ProcessMove(_computerPokemon, _playerPokemon, _computerAI.selectMove(_computerPokemon))
-            if (_playerPokemon.myCurrentHealth > 0 and T_PlayerAttackPossible):
-                self.ProcessMove(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
+            if _playerPokemon.myCurrentHealth > 0 and T_PlayerAttackPossible:
+                self.ProcessMove(_playerPokemon, _computerPokemon,
+                                 _player.selectMove(_player.myTeam[0].myMoves[_actionID]))
 
             # TODO
             print("Need poison, bad poison, and burn checks at the end of ProcessTurn")
