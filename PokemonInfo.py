@@ -18,6 +18,7 @@ class Pokemon:
 
         self.myTurnsSleeping = 0
         self.mySleepTarget = 0
+        self.badPoisonTurns = 0
 
         # normal, paralyzed(1), asleep(2), poisoned(3), bad poisoned(4), burned(5), frozen(6)
         self.myPrimaryStatus = 0
