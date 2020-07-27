@@ -290,7 +290,7 @@ class CombatHandler:
                 print("Attacking the comp naow")
                 self.ProcessMove(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
                 if _computerPokemon.myCurrentHealth > 0 and T_ComputerAttackPossible:
-                    self.ProcessDamage(_computerPokemon, _playerPokemon, _computer.selectMove())
+                    self.ProcessDamage(_computerPokemon, _playerPokemon, _computerAI.selectMove(_computerPokemon))
 
             # else:
             self.ProcessMove(_computerPokemon, _playerPokemon, _computerAI.selectMove(_computerPokemon))
