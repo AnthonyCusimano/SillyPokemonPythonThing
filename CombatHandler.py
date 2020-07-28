@@ -84,6 +84,19 @@ class CombatHandler:
 
         return T_Modifier
 
+    def ProcessPlayerPokemonDeath(self, _pokemon, _player):
+        print(_pokemon.myName, " has fainted!")
+        print("Select goon to swap to")
+        print("1: ", _player.myTeam[1].myName, " ", _player.myTeam[1].myCurrentHealth, "/",
+              _player.myTeam[1].myBaseStats[0])
+        print("2: ", _player.myTeam[2].myName, " ", _player.myTeam[2].myCurrentHealth, "/",
+              _player.myTeam[2].myBaseStats[0])
+        T_Input = int(input())
+        _player.swap(T_Input)
+
+    def ProcessComputerPokemonDeath(self, _pokemon, _computer, _computerAI):
+        print(_pokemon.myName, " has fainted!")
+        _computerAI.swap(_computer.myTeam)
 
     # TODO comment
     def rollAccuracy(self, _move):
@@ -177,12 +190,12 @@ class CombatHandler:
         # shell smash
         # TODO
         elif _move.myIDNum == 504:
-            print ("shell smash")
+            print("shell smash")
 
         # circle throw
         # TODO
         elif _move.myIDNum == 509:
-            print ("circle throw")
+            print("circle throw")
 
     # TODO comment
     def ProcessDamage(self, _attacker, _defender, _move):
@@ -299,7 +312,7 @@ class CombatHandler:
                                  _player.selectMove(_player.myTeam[0].myMoves[_actionID]))
 
             # TODO
-            print("Need poison, bad poison, and burn checks at the end of ProcessTurn")
+            print("Need bad poison check at the end of ProcessTurn")
 
             # player statuses
             # poison
@@ -328,3 +341,5 @@ class CombatHandler:
                 print("Burn taking place at the end of turn, not accounting for case where ComputerPokemon attacked",
                       " where it should trigger right after their attack")
                 _computerPokemon.myCurrentHealth -= _computerPokemon.myBaseStats[0] * 0.125
+
+                print("Beginning death checks")
