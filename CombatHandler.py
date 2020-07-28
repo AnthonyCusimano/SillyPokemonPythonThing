@@ -300,3 +300,31 @@ class CombatHandler:
 
             # TODO
             print("Need poison, bad poison, and burn checks at the end of ProcessTurn")
+
+            # player statuses
+            # poison
+            if _playerPokemon.myPrimaryStatus == 3:
+                print("Player is hurt by poison")
+                _playerPokemon.myCurrentHealth -= _playerPokemon.myBaseStats[0] * 0.125
+
+            elif _playerPokemon.myPrimaryStatus == 4:
+                print("Player is hurt by bad poison")
+                ++_playerPokemon.badPoisonTurns
+
+            elif _playerPokemon.myPrimaryStatus == 5:
+                print("Burn taking place at the end of turn, not accounting for case where PlayerPokemon attacked",
+                      " where it should trigger right after their attack")
+                _playerPokemon.myCurrentHealth -= _playerPokemon.myBaseStats[0] * 0.125
+
+            # computer statuses
+            if _computerPokemon.myPrimaryStatus == 3:
+                print("computer is hurt by poison")
+
+            elif _computerPokemon.myPrimaryStatus == 4:
+                print("computer is hurt by bad poison")
+                ++_computerPokemon.badPoisonTurns
+
+            elif _computerPokemon.myPrimaryStatus == 5:
+                print("Burn taking place at the end of turn, not accounting for case where ComputerPokemon attacked",
+                      " where it should trigger right after their attack")
+                _computerPokemon.myCurrentHealth -= _computerPokemon.myBaseStats[0] * 0.125
