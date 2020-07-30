@@ -33,7 +33,8 @@ class Pokemon:
             self.myNature = Nature(10)
 
             self.mySpeciesBaseStats = [90, 95, 95, 70, 90, 70]
-            self.myBaseStats = [90, 95, 95, 70, 90, 70]
+            self.myBaseStats = [0, 0, 0, 0, 0, 0]
+            self.ApplyBaseStats()
 
             self.myMoves[0] = Move(503)
             self.myMoves[1] = Move(509)
@@ -48,7 +49,8 @@ class Pokemon:
             self.myNature = Nature(3)
 
             self.mySpeciesBaseStats = [50, 120, 53, 35, 110, 87]
-            self.myBaseStats = [50, 120, 53, 35, 110, 87]
+            self.myBaseStats = [0, 0, 0, 0, 0, 0]
+            self.ApplyBaseStats()
 
             self.myMoves[0] = Move(282)
             self.myMoves[1] = Move(370)
@@ -63,7 +65,8 @@ class Pokemon:
             self.myNature = Nature(13)
 
             self.mySpeciesBaseStats = [75, 55, 70, 55, 95, 110]
-            self.myBaseStats = [75, 55, 70, 55, 95, 110]
+            self.myBaseStats = [0, 0, 0, 0, 0, 0]
+            self.ApplyBaseStats()
 
             self.myMoves[0] = Move(73)
             self.myMoves[1] = Move(79)
@@ -78,7 +81,8 @@ class Pokemon:
             self.myNature = Nature(20)
 
             self.mySpeciesBaseStats = [60, 50, 120, 90, 80, 30]
-            self.myBaseStats = [60, 50, 120, 90, 80, 30]
+            self.myBaseStats = [0, 0, 0, 0, 0, 0]
+            self.ApplyBaseStats()
 
             self.myMoves[0] = Move(446)
             self.myMoves[1] = Move(281)
@@ -93,7 +97,8 @@ class Pokemon:
             self.myNature = Nature(15)
 
             self.mySpeciesBaseStats = [55, 84, 105, 114, 75, 52]
-            self.myBaseStats = [55, 84, 105, 114, 75, 52]
+            self.myBaseStats = [0, 0, 0, 0, 0, 0]
+            self.ApplyBaseStats()
 
             self.myMoves[0] = Move(58)
             self.myMoves[1] = Move(56)
@@ -108,7 +113,8 @@ class Pokemon:
             self.myNature = Nature(10)
 
             self.mySpeciesBaseStats = [60, 67, 85, 77, 75, 116]
-            self.myBaseStats = [60, 67, 85, 77, 75, 116]
+            self.myBaseStats = [0, 0, 0, 0, 0, 0]
+            self.ApplyBaseStats()
 
             self.myMoves[0] = Move(585)
             self.myMoves[1] = Move(412)
@@ -124,3 +130,8 @@ class Pokemon:
         if self.myNature.myID == 13:
             self.myBaseStats[3] *= 0.90
             self.myBaseStats[5] *= 1.10
+
+
+    def ApplyBaseStats(self):
+        for i in range(6):
+           self.myBaseStats[i]
