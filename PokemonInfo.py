@@ -32,6 +32,7 @@ class Pokemon:
 
             self.myNature = Nature(10)
 
+            self.mySpeciesBaseStats = [90, 95, 95, 70, 90, 70]
             self.myBaseStats = [90, 95, 95, 70, 90, 70]
 
             self.myMoves[0] = Move(503)
@@ -46,6 +47,7 @@ class Pokemon:
 
             self.myNature = Nature(3)
 
+            self.mySpeciesBaseStats = [50, 120, 53, 35, 110, 87]
             self.myBaseStats = [50, 120, 53, 35, 110, 87]
 
             self.myMoves[0] = Move(282)
@@ -60,6 +62,7 @@ class Pokemon:
 
             self.myNature = Nature(13)
 
+            self.mySpeciesBaseStats = [75, 55, 70, 55, 95, 110]
             self.myBaseStats = [75, 55, 70, 55, 95, 110]
 
             self.myMoves[0] = Move(73)
@@ -74,6 +77,7 @@ class Pokemon:
 
             self.myNature = Nature(20)
 
+            self.mySpeciesBaseStats = [60, 50, 120, 90, 80, 30]
             self.myBaseStats = [60, 50, 120, 90, 80, 30]
 
             self.myMoves[0] = Move(446)
@@ -88,6 +92,7 @@ class Pokemon:
 
             self.myNature = Nature(15)
 
+            self.mySpeciesBaseStats = [55, 84, 105, 114, 75, 52]
             self.myBaseStats = [55, 84, 105, 114, 75, 52]
 
             self.myMoves[0] = Move(58)
@@ -102,6 +107,7 @@ class Pokemon:
 
             self.myNature = Nature(10)
 
+            self.mySpeciesBaseStats = [60, 67, 85, 77, 75, 116]
             self.myBaseStats = [60, 67, 85, 77, 75, 116]
 
             self.myMoves[0] = Move(585)
