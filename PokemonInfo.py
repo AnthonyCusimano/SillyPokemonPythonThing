@@ -137,11 +137,11 @@ class Pokemon:
         # every pokemon in this app is 50
         # all instances of 50 in these formulas could be replaced by self.level if we included it
         # every pokemon has 31 IVs in every stat
-        # TODO need EVs
+        # TODO need EVs and nature implementation
         self.myBaseStats[0] = math.floor(((2 * self.mySpeciesBaseStats[0] + 31) * 50 / 100) + 50 + 10)
 
         for i in range(1, 6):
-            self.myBaseStats[i] = self.mySpeciesBaseStats[i]
+            self.myBaseStats[i] = math.floor(((2 * self.mySpeciesBaseStats[i] + 31) * 50 / 100) + 5)
 
         if self.myName == "Jumpluff":
             for i in range(6):
