@@ -1,3 +1,5 @@
+import math
+
 from Moves import Move
 from Nature import Nature
 
@@ -136,7 +138,7 @@ class Pokemon:
         # all instances of 50 in these formulas could be replaced by self.level if we included it
         # every pokemon has 31 IVs in every stat
         # TODO need EVs
-        self.myBaseStats[0] = (((2 * self.mySpeciesBaseStats[0] + 31) * 50) / 100) + 10 + 50
+        self.myBaseStats[0] = math.floor(((2 * self.mySpeciesBaseStats[0] + 31) * 50 / 100) + 50 + 10)
 
         for i in range(1, 6):
             self.myBaseStats[i] = self.mySpeciesBaseStats[i]
