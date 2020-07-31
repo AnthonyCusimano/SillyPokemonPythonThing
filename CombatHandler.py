@@ -342,4 +342,9 @@ class CombatHandler:
                       " where it should trigger right after their attack")
                 _computerPokemon.myCurrentHealth -= _computerPokemon.myBaseStats[0] * 0.125
 
-                print("Beginning death checks")
+            print("Beginning death checks")
+            if _playerPokemon.myCurrentHealth <= 0:
+                self.ProcessPlayerPokemonDeath(_playerPokemon, _player)
+
+            if _computerPokemon.myCurrentHealth < 1:
+                self.ProcessComputerPokemonDeath(_computerPokemon, _computer, _computerAI)
