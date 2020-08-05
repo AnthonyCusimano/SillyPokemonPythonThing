@@ -34,7 +34,7 @@ class Pokemon:
             self.myNature = Nature(10)
 
             self.mySpeciesBaseStats = [90, 95, 95, 70, 90, 70]
-            self.myEffortValues[252, 0, 252, 0, 4, 0]
+            self.myEffortValues = [252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -51,7 +51,7 @@ class Pokemon:
             self.myNature = Nature(3)
 
             self.mySpeciesBaseStats = [50, 120, 53, 35, 110, 87]
-            self.myEffortValues[252, 0, 252, 0, 4, 0]
+            self.myEffortValues = [252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -68,7 +68,7 @@ class Pokemon:
             self.myNature = Nature(13)
 
             self.mySpeciesBaseStats = [75, 55, 70, 55, 95, 110]
-            self.myEffortValues[0, 0, 4, 0, 252, 252]
+            self.myEffortValues = [0, 0, 4, 0, 252, 252]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -85,7 +85,7 @@ class Pokemon:
             self.myNature = Nature(20)
 
             self.mySpeciesBaseStats = [60, 50, 120, 90, 80, 30]
-            self.myEffortValues[252, 0, 252, 0, 4, 0]
+            self.myEffortValues = [252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -102,7 +102,7 @@ class Pokemon:
             self.myNature = Nature(15)
 
             self.mySpeciesBaseStats = [55, 84, 105, 114, 75, 52]
-            self.myEffortValues[252, 0, 252, 0, 4, 0]
+            self.myEffortValues = [252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -119,7 +119,7 @@ class Pokemon:
             self.myNature = Nature(10)
 
             self.mySpeciesBaseStats = [60, 67, 85, 77, 75, 116]
-            self.myEffortValues[252, 0, 252, 0, 4, 0]
+            self.myEffortValues = [252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -143,10 +143,12 @@ class Pokemon:
         # all instances of 50 in these formulas could be replaced by self.level if we included it
         # every pokemon has 31 IVs in every stat
         # TODO need EVs and nature implementation
-        self.myBaseStats[0] = math.floor(((2 * self.mySpeciesBaseStats[0] + 31) * 50 / 100) + 50 + 10)
+        self.myBaseStats[0] = math.floor(((2 * self.mySpeciesBaseStats[0] + 31 + (self.myEffortValues[0] / 4))
+                                          * 50 / 100) + 50 + 10)
 
         for i in range(1, 6):
-            self.myBaseStats[i] = math.floor(((2 * self.mySpeciesBaseStats[i] + 31) * 50 / 100) + 5)
+            self.myBaseStats[i] = math.floor(((2 * self.mySpeciesBaseStats[i] + 31 + (self.myEffortValues[i] / 4))
+                                              * 50 / 100) + 5)
 
         if self.myName == "Jumpluff":
             for i in range(6):
