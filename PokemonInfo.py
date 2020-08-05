@@ -3,7 +3,6 @@ import math
 from Moves import Move
 from Nature import Nature
 
-
 class Pokemon:
 
     def __init__(self, _name):
@@ -35,6 +34,7 @@ class Pokemon:
             self.myNature = Nature(10)
 
             self.mySpeciesBaseStats = [90, 95, 95, 70, 90, 70]
+            self.myEffortValues[252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -51,6 +51,7 @@ class Pokemon:
             self.myNature = Nature(3)
 
             self.mySpeciesBaseStats = [50, 120, 53, 35, 110, 87]
+            self.myEffortValues[252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -67,6 +68,7 @@ class Pokemon:
             self.myNature = Nature(13)
 
             self.mySpeciesBaseStats = [75, 55, 70, 55, 95, 110]
+            self.myEffortValues[0, 0, 4, 0, 252, 252]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -83,6 +85,7 @@ class Pokemon:
             self.myNature = Nature(20)
 
             self.mySpeciesBaseStats = [60, 50, 120, 90, 80, 30]
+            self.myEffortValues[252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -99,6 +102,7 @@ class Pokemon:
             self.myNature = Nature(15)
 
             self.mySpeciesBaseStats = [55, 84, 105, 114, 75, 52]
+            self.myEffortValues[252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
@@ -115,6 +119,7 @@ class Pokemon:
             self.myNature = Nature(10)
 
             self.mySpeciesBaseStats = [60, 67, 85, 77, 75, 116]
+            self.myEffortValues[252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
