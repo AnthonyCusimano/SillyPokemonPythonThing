@@ -27,7 +27,10 @@ computer = Trainer("Whimsicott", "Hitmonlee", "Gorebyss")
 
 # TODO
 # you cannot select a different action
-while (player.myTeam[0].myCurrentHealth != 0 and player.myTeam[1].myCurrentHealth != 0 and player.myTeam[2].myCurrentHealth != 0) or (computer.myTeam[0].myCurrentHealth != 0 and computer.myTeam[1].myCurrentHealth != 0 and computer.myTeam[2].myCurrentHealth != 0):
+while (player.myTeam[0].myCurrentHealth != 0 and player.myTeam[1].myCurrentHealth != 0 and 
+       player.myTeam[2].myCurrentHealth != 0) or (computer.myTeam[0].myCurrentHealth != 0 and 
+                                                  computer.myTeam[1].myCurrentHealth != 0 and 
+                                                  computer.myTeam[2].myCurrentHealth != 0):
     print("NEW TURN WOW!!!")
     print("Enemy health is ", computer.myTeam[0].myCurrentHealth, " our of ", computer.myTeam[0].myBaseStats[0])
     print("Your health is ", player.myTeam[0].myCurrentHealth, " our of ", player.myTeam[0].myBaseStats[0])
@@ -35,8 +38,10 @@ while (player.myTeam[0].myCurrentHealth != 0 and player.myTeam[1].myCurrentHealt
     mover = int(input())
 
     if mover == 0:
-        print("1: ", player.myTeam[1].myName, " ", player.myTeam[1].myCurrentHealth, "/", player.myTeam[1].myBaseStats[0])
-        print("2: ", player.myTeam[2].myName, " ", player.myTeam[2].myCurrentHealth, "/", player.myTeam[2].myBaseStats[0])
+        print("1: ", player.myTeam[1].myName, " ", player.myTeam[1].myCurrentHealth, "/", 
+              player.myTeam[1].myBaseStats[0])
+        print("2: ", player.myTeam[2].myName, " ", player.myTeam[2].myCurrentHealth, "/", 
+              player.myTeam[2].myBaseStats[0])
 
     elif mover == 1:
         print("0: ", player.myTeam[0].myMoves[0].myName)
