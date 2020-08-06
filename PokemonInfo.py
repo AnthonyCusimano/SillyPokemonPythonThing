@@ -132,17 +132,115 @@ class Pokemon:
 
         self.ApplyNature()
 
-    # for now just applying Jumpluff's jolly nature
+    # double check your work, for no reason in particular :)
     def ApplyNature(self):
-        if self.myNature.myID == 13:
+
+        # lonely
+        if self.myNature.myID == 1:
+            self.myBaseStats[1] *= 1.10
+            self.myBaseStats[2] *= 0.90
+
+        # brave
+        elif self.myNature.myID == 2:
+            self.myBaseStats[1] *= 1.10
+            self.myBaseStats[5] *= 0.90
+
+        # adamant
+        elif self.myNature.myID == 3:
+            self.myBaseStats[1] *= 1.10
+            self.myBaseStats[3] *= 0.90
+
+        # naughty
+        elif self.myNature.myID == 4:
+            self.myBaseStats[1] *= 1.10
+            self.myBaseStats[4] *= 0.90
+
+        # bold
+        elif self.myNature.myID == 5:
+            self.myBaseStats[2] *= 1.10
+            self.myBaseStats[1] *= 0.90
+
+        # relaxed
+        elif self.myNature.myID == 7:
+            self.myBaseStats[2] *= 1.10
+            self.myBaseStats[5] *= 0.90
+
+        # impish
+        elif self.myNature.myID == 8:
+            self.myBaseStats[2] *= 1.10
+            self.myBaseStats[3] *= 0.90
+
+        # lax
+        elif self.myNature.myID == 9:
+            self.myBaseStats[2] *= 1.10
+            self.myBaseStats[4] *= 0.90
+
+        # timid
+        elif self.myNature.myID == 10:
+            self.myBaseStats[5] *= 1.10
+            self.myBaseStats[1] *= 0.90
+
+        # hasty
+        elif self.myNature.myID == 11:
+            self.myBaseStats[5] *= 1.10
+            self.myBaseStats[2] *= 0.90
+
+        # jolly
+        elif self.myNature.myID == 13:
+            self.myBaseStats[5] *= 0.90
+            self.myBaseStats[3] *= 1.10
+
+        # naive
+        elif self.myNature.myID == 14:
+            self.myBaseStats[5] *= 0.90
+            self.myBaseStats[4] *= 1.10
+
+        # modest
+        elif self.myNature.myID == 15:
+            self.myBaseStats[3] *= 0.90
+            self.myBaseStats[1] *= 1.10
+
+        # mild
+        elif self.myNature.myID == 16:
+            self.myBaseStats[3] *= 0.90
+            self.myBaseStats[2] *= 1.10
+
+        # quiet
+        elif self.myNature.myID == 17:
             self.myBaseStats[3] *= 0.90
             self.myBaseStats[5] *= 1.10
+
+        # rash
+        elif self.myNature.myID == 19:
+            self.myBaseStats[3] *= 0.90
+            self.myBaseStats[5] *= 1.10
+
+        # calm
+        elif self.myNature.myID == 20:
+            self.myBaseStats[4] *= 0.90
+            self.myBaseStats[1] *= 1.10
+
+        # gentle
+        elif self.myNature.myID == 21:
+            self.myBaseStats[4] *= 0.90
+            self.myBaseStats[2] *= 1.10
+
+        # sassy
+        elif self.myNature.myID == 22:
+            self.myBaseStats[4] *= 0.90
+            self.myBaseStats[5] *= 1.10
+
+        # careful
+        elif self.myNature.myID == 23:
+            self.myBaseStats[4] *= 0.90
+            self.myBaseStats[3] *= 1.10
+
 
     def ApplyBaseStats(self):
         # every pokemon in this app is 50
         # all instances of 50 in these formulas could be replaced by self.level if we included it
         # every pokemon has 31 IVs in every stat
-        # TODO need EVs and nature implementation
+        # TODO need nature implementation
         self.myBaseStats[0] = math.floor(((2 * self.mySpeciesBaseStats[0] + 31 + (self.myEffortValues[0] / 4))
                                           * 50 / 100) + 50 + 10)
 
