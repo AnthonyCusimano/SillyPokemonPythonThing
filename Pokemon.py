@@ -13,8 +13,6 @@ Gamer = CombatHandler()
 
 computer = Trainer("Whimsicott", "Hitmonlee", "Gorebyss")
 
-print(player.myTeam[0].myBaseStats[5])
-
 # not big on this cus it crashes if you do something stupid
 # mover = int(input())
 
@@ -47,7 +45,7 @@ while (player.myTeam[0].myCurrentHealth != 0 and player.myTeam[1].myCurrentHealt
         print("3: ", player.myTeam[0].myMoves[3].myName)
 
     moveModifier = int(input())
-    
+
     Gamer.ProcessTurn(mover, moveModifier, player, computer, GamerAI, player.myTeam[0], computer.myTeam[0])
 
 # TODO
