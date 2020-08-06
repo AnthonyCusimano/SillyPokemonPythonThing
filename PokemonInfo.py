@@ -187,8 +187,10 @@ class Pokemon:
 
         # jolly
         elif self.myNature.myID == 13:
-            self.myBaseStats[5] *= 0.90
-            self.myBaseStats[3] *= 1.10
+            self.myBaseStats[5] *= 1.10
+            self.myBaseStats[3] *= 0.90
+            self.myBaseStats[5] = math.floor(self.myBaseStats[5])
+            self.myBaseStats[3] = math.floor(self.myBaseStats[3])
 
         # naive
         elif self.myNature.myID == 14:
@@ -235,6 +237,9 @@ class Pokemon:
             self.myBaseStats[4] *= 0.90
             self.myBaseStats[3] *= 1.10
 
+        if self.myName == "Jumpluff":
+            for i in range(6):
+                print(self.myBaseStats[i])
 
     def ApplyBaseStats(self):
         # every pokemon in this app is 50
@@ -247,7 +252,3 @@ class Pokemon:
         for i in range(1, 6):
             self.myBaseStats[i] = math.floor(((2 * self.mySpeciesBaseStats[i] + 31 + (self.myEffortValues[i] / 4))
                                               * 50 / 100) + 5)
-
-        if self.myName == "Jumpluff":
-            for i in range(6):
-                print(self.myBaseStats[i])
