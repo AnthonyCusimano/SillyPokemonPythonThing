@@ -175,8 +175,8 @@ class CombatHandler:
         # close combat
         # TODO LOLE THIS SUCKS
         elif _move.myIDNum == 370:
-            --_attacker.myBaseStats[2]
-            --_attacker.myBaseStats[4]
+            _attacker.myBaseStats[2] -= 1
+            _attacker.myBaseStats[4] -= 1
 
         # stealth rocks
         # TODO
@@ -216,11 +216,11 @@ class CombatHandler:
             return
 
         T_Damage /= 50
-        T_Damage + 2
+        T_Damage += 2
         print(T_Damage, " is damage before T_DamageMod applied")
         T_DamageMod = random.randrange(85, 100) / 100
 
-        #TODO Adaptability (pokmemon ability) check
+        # TODO Adaptability (pokemon ability) check
         if self.returnIsStab(_attacker, _move) == 1:
             T_DamageMod *= 1.5
 
@@ -280,7 +280,7 @@ class CombatHandler:
                     print(_playerPokemon.myName, " woke up!!!!!!!!!!!!!!")
 
                 else:
-                    ++_playerPokemon.myTurnsSleeping
+                    _playerPokemon.myTurnsSleeping += 1
                     T_PlayerAttackPossible = False
 
             # freeze
@@ -322,7 +322,7 @@ class CombatHandler:
 
             elif _playerPokemon.myPrimaryStatus == 4:
                 print("Player is hurt by bad poison")
-                ++_playerPokemon.badPoisonTurns
+                _playerPokemon.badPoisonTurns += 1
 
             elif _playerPokemon.myPrimaryStatus == 5:
                 print("Burn taking place at the end of turn, not accounting for case where PlayerPokemon attacked",
@@ -335,7 +335,7 @@ class CombatHandler:
 
             elif _computerPokemon.myPrimaryStatus == 4:
                 print("computer is hurt by bad poison")
-                ++_computerPokemon.badPoisonTurns
+                _computerPokemon.badPoisonTurns += 1
 
             elif _computerPokemon.myPrimaryStatus == 5:
                 print("Burn taking place at the end of turn, not accounting for case where ComputerPokemon attacked",
