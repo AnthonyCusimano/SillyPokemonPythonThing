@@ -1,7 +1,9 @@
 import math
 
 
-def restorePokemonHealth (_pokemon, _healthRestored):
+# why is this here?
+# why do I exist?
+def restorePokemonHealth(_pokemon, _healthRestored):
 
     if _pokemon.myCurrentHealth + _healthRestored > _pokemon.myBaseStats[0]:
         _pokemon.myCurrentHealth = _pokemon.myBaseStats[0]
@@ -10,9 +12,9 @@ def restorePokemonHealth (_pokemon, _healthRestored):
         _pokemon.myCurrentHealth += _healthRestored
 
 
-#
+# held items by pokermen
 class Item:
-    
+
     def __init__(self):
         self.myName = ""
         self.myIDNumber = 0
