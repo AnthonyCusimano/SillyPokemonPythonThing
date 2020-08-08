@@ -12,6 +12,10 @@ def restorePokemonHealth (_pokemon, _healthRestored):
 
 #
 class Item:
+    
+    def __init__(self):
+        self.myName = ""
+        self.myIDNumber = 0
 
     def __init__(self, _name):
         self.myName = _name
