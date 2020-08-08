@@ -2,6 +2,8 @@ from AI import AI
 import random
 
 
+# bad gen 1 AI just picked a random move every turn
+# I dunno how switching worked but I'm fairly certain this is accurate
 class BadAIGen1(AI):
     pass
 
@@ -14,7 +16,7 @@ class BadAIGen1(AI):
         _pokemon.myMoves[self.movePicked].myName
         return _pokemon.myMoves[self.movePicked]  # self.movePicked
 
-    #test this LOLE
+    # test this LOLE
     def swap(self, _myParty):
         for x in _myParty:
             if _myParty[x].myCurrentHealth > 0:
