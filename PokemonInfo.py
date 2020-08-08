@@ -2,7 +2,10 @@ import math
 
 from Moves import Move
 from Nature import Nature
+from Items import Item
 
+
+#
 class Pokemon:
 
     def __init__(self, _name):
@@ -38,6 +41,8 @@ class Pokemon:
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
+            self.myItem = Item()
+
             self.myMoves[0] = Move(503)
             self.myMoves[1] = Move(509)
             self.myMoves[2] = Move(95)
@@ -54,6 +59,8 @@ class Pokemon:
             self.myEffortValues = [252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
+
+            self.myItem = Item()
 
             self.myMoves[0] = Move(282)
             self.myMoves[1] = Move(370)
@@ -72,6 +79,8 @@ class Pokemon:
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
+            self.myItem = Item("Red Card")
+
             self.myMoves[0] = Move(73)
             self.myMoves[1] = Move(79)
             self.myMoves[2] = Move(369)
@@ -88,6 +97,8 @@ class Pokemon:
             self.myEffortValues = [252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
+
+            self.myItem = Item()
 
             self.myMoves[0] = Move(446)
             self.myMoves[1] = Move(281)
@@ -106,6 +117,8 @@ class Pokemon:
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
+            self.myItem = Item()
+
             self.myMoves[0] = Move(58)
             self.myMoves[1] = Move(56)
             self.myMoves[2] = Move(504)
@@ -122,6 +135,8 @@ class Pokemon:
             self.myEffortValues = [252, 0, 252, 0, 4, 0]
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
+
+            self.myItem = Item()
 
             self.myMoves[0] = Move(585)
             self.myMoves[1] = Move(412)
