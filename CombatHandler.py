@@ -124,7 +124,7 @@ class CombatHandler:
             # coinflip return
             return random.randrange(1)
 
-    def MoveSecondaryAffect(self, _move, _attacker, _defender):
+    def MoveSecondaryAffect(self, _move, _attacker, _defender, _attackerTrainer, _defenderTrainer):
 
         # ice beam
         if _move.myIDNum == 58:
@@ -198,7 +198,7 @@ class CombatHandler:
             print("circle throw")
 
     # TODO comment
-    def ProcessDamage(self, _attacker, _defender, _move):
+    def ProcessDamage(self, _attacker, _defender, _move, _attackerTrainer, _defenderTrainer):
         # TODO improve :)
         print("_move's name is ", _move.myName)
         print("_move's base power is  ", _move.myBasePower)
@@ -234,9 +234,9 @@ class CombatHandler:
 
         # ignoring weather, badge, targets,
 
-    def ProcessMove(self, _attacker, _defender, _move):
-        self.ProcessDamage(_attacker, _defender, _move)
-        self.MoveSecondaryAffect(_move, _attacker, _defender)
+    def ProcessMove(self, _attacker, _defender, _move, _attackerTrainer, _defenderTrainer):
+        self.ProcessDamage(_attacker, _defender, _move, _attackerTrainer, _defenderTrainer)
+        self.MoveSecondaryAffect(_move, _attacker, _defender, _attackerTrainer, _defenderTrainer)
 
     # TODO comment
     def ProcessTurn(self, _actionTypeID, _actionID, _player, _computer, _computerAI, _playerPokemon, _computerPokemon):
