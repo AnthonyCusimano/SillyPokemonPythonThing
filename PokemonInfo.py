@@ -132,7 +132,7 @@ class Pokemon:
 
         self.ApplyNature()
 
-    # double check your work, for no reason in particular :)
+    # 
     def ApplyNature(self):
 
         # lonely
@@ -240,13 +240,10 @@ class Pokemon:
                 print(self.myBaseStats[i])
 
     def ApplyBaseStats(self):
-        # every pokemon in this app is 50
-        # all instances of 50 in these formulas could be replaced by self.level if we included it
-        # every pokemon has 31 IVs in every stat
-        # TODO need nature implementation
+        # every pokemon has 31 IVs in every stat right now
         self.myBaseStats[0] = math.floor(((2 * self.mySpeciesBaseStats[0] + 31 + (self.myEffortValues[0] / 4))
-                                          * 50 / 100) + 50 + 10)
+                                          * self.myLevel / 100) + self.myLevel + 10)
 
         for i in range(1, 6):
             self.myBaseStats[i] = math.floor(((2 * self.mySpeciesBaseStats[i] + 31 + (self.myEffortValues[i] / 4))
-                                              * 50 / 100) + 5)
+                                              * self.myLevel / 100) + 5)
