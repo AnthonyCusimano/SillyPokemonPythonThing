@@ -166,11 +166,13 @@ class CombatHandler:
         # knockoff
         elif _move.myIDNum == 282:
             print("knockoff currently doing nothing because Items aren't in the game yet lole")
+            # _defender.myItem = Item()
 
         # TODO
         # uturn
         elif _move.myIDNum == 369:
             print("Need access to Trainer.swap method so uturn can do the turn part")
+            # _attackerTrainer
 
         # close combat
         # TODO LOLE THIS SUCKS
@@ -301,18 +303,25 @@ class CombatHandler:
 
             if T_PlayerAttackPossible:
                 print("Attacking the comp naow")
-                self.ProcessMove(_playerPokemon, _computerPokemon, _player.selectMove(_actionID))
+                self.ProcessMove(_playerPokemon, _computerPokemon, _player.selectMove(_actionID), _player, _computer)
                 if _computerPokemon.myCurrentHealth > 0 and T_ComputerAttackPossible:
-                    self.ProcessDamage(_computerPokemon, _playerPokemon, _computerAI.selectMove(_computerPokemon))
+                    self.ProcessMove(_computerPokemon, _playerPokemon, _computerAI.selectMove(_computerPokemon),
+                                     _computer, _player)
 
-            # else:
-            self.ProcessMove(_computerPokemon, _playerPokemon, _computerAI.selectMove(_computerPokemon))
-            if _playerPokemon.myCurrentHealth > 0 and T_PlayerAttackPossible:
-                self.ProcessMove(_playerPokemon, _computerPokemon,
-                                 _player.selectMove(_player.myTeam[0].myMoves[_actionID]))
+            else:
+                self.ProcessMove(_computerPokemon, _playerPokemon, _computerAI.selectMove(_computerPokemon),
+                             _computer, _player)
+                if _playerPokemon.myCurrentHealth > 0 and T_PlayerAttackPossible:
+                    self.ProcessMove(_playerPokemon, _computerPokemon,
+                                 _player.selectMove(_player.myTeam[0].myMoves[_actionID]), _player, _computer)
 
             # TODO
             print("Need bad poison check at the end of ProcessTurn")
+
+            # drowsy check
+            if _playerPokemon.isDrowsy:
+                _playerPokemon.myPrimaryStatus = 2
+                _playerPokemon.isDrowsy = False
 
             # player statuses
             # poison
@@ -328,6 +337,11 @@ class CombatHandler:
                 print("Burn taking place at the end of turn, not accounting for case where PlayerPokemon attacked",
                       " where it should trigger right after their attack")
                 _playerPokemon.myCurrentHealth -= _playerPokemon.myBaseStats[0] * 0.125
+
+            # drowsy check
+            if _computerPokemon.isDrowsy:
+                _computerPokemon.myPrimaryStatus = 2
+                _computerPokemon.isDrowsy = False
 
             # computer statuses
             if _computerPokemon.myPrimaryStatus == 3:
