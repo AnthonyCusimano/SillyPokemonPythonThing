@@ -12,6 +12,10 @@ class BadAIGen1(AI):
         self.movePicked = 0
 
     def selectMove(self, _pokemon):
+
+        if _pokemon.myItem.myIDNumber == 4 and _pokemon.myChoiceMade:
+            return _pokemon.myMoves[_pokemon.myChoiceID]
+
         self.movePicked = random.randrange(3)
         _pokemon.myMoves[self.movePicked].myName
         return _pokemon.myMoves[self.movePicked]  # self.movePicked
