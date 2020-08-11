@@ -28,6 +28,12 @@ class Item:
         elif self.myName == "Leftovers":
             self.myIDNumber = 2
 
+        elif self.myName == "White Herb":
+            self.myIDNumber = 3
+
+        elif self.myName == "Choice Specs":
+            self.myIDNumber = 4
+
     def ProcessMyEndOfTurnEffect(self, _myHolder):
         print("Item end of turn item effect")
         # leftovers
