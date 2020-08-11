@@ -24,6 +24,10 @@ class Pokemon:
         self.mySleepTarget = 0
         self.badPoisonTurns = 0
 
+        # choice garbage
+        self.myChoiceID = 0
+        self.myChoiceMade = False
+
         # normal, paralyzed(1), asleep(2), poisoned(3), bad poisoned(4), burned(5), frozen(6)
         self.myPrimaryStatus = 0
         self.isConfused = False
@@ -41,7 +45,7 @@ class Pokemon:
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
-            self.myItem = Item()
+            self.myItem = Item("Leftovers")
 
             self.myMoves[0] = Move(503)
             self.myMoves[1] = Move(509)
@@ -60,7 +64,7 @@ class Pokemon:
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
-            self.myItem = Item()
+            self.myItem = Item("White Herb")
 
             self.myMoves[0] = Move(282)
             self.myMoves[1] = Move(370)
@@ -98,7 +102,7 @@ class Pokemon:
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
-            self.myItem = Item()
+            self.myItem = Item("Leftovers")
 
             self.myMoves[0] = Move(446)
             self.myMoves[1] = Move(281)
@@ -117,7 +121,7 @@ class Pokemon:
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
-            self.myItem = Item()
+            self.myItem = Item("White Herb")
 
             self.myMoves[0] = Move(58)
             self.myMoves[1] = Move(56)
@@ -136,7 +140,7 @@ class Pokemon:
             self.myBaseStats = [0, 0, 0, 0, 0, 0]
             self.ApplyBaseStats()
 
-            self.myItem = Item()
+            self.myItem = Item("Choice Specs")
 
             self.myMoves[0] = Move(585)
             self.myMoves[1] = Move(412)
