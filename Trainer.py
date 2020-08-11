@@ -1,6 +1,7 @@
 from PokemonInfo import *
 # from AI import
 
+
 #
 class Trainer:
 
@@ -22,7 +23,7 @@ class Trainer:
             self.myTeam[_newGuyAddress] = temp
 
     def selectMove(self, _moveID):
-        if _moveID == '1' or _moveID == 2 or _moveID == 3 or _moveID == 4:
+        if _moveID == 0 or _moveID == 1 or _moveID == 2 or _moveID == 3:
             print(self.myTeam[0].myMoves[_moveID].myName, "selected")
             return self.myTeam[0].myMoves[_moveID]
 
