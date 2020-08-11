@@ -7,9 +7,10 @@ import random
 class BadAIGen1(AI):
     pass
 
-    def __init__(self):
+    def __init__(self, _myTrainer):
         print("bad gen 1 AI created")
         self.movePicked = 0
+        self.myTrainer = _myTrainer
 
     def selectMove(self, _pokemon):
 
@@ -22,7 +23,8 @@ class BadAIGen1(AI):
 
     # test this LOLE
     def swap(self, _myParty):
-        for x in _myParty:
+        # for x in _myParty:
+        for x in range(4):
             if _myParty[x].myCurrentHealth > 0:
                 temp = self.myTeam[0]
                 self.myTeam[0] = _myParty[x]
