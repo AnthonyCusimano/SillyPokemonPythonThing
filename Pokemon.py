@@ -13,18 +13,6 @@ computer = Trainer("Whimsicott", "Hitmonlee", "Gorebyss")
 
 GamerAI = BadAIGen1(computer)
 
-# not big on this cus it crashes if you do something stupid
-# mover = int(input())
-
-# player.selectMove(mover)
-# replace ProcessDamage calls with "Process turn"
-
-# Gamer.ProcessDamage(player.myTeam[0], computer.myTeam[0], player.myTeam[0].myMoves[mover])
-
-# T_SelectedMove = computer.selectMove()
-
-# Gamer.ProcessDamage(computer.myTeam[0], player.myTeam[0], computer.myTeam[0].myMoves[GamerAI.selectMove()])
-
 # gamer
 while (player.myTeam[0].myCurrentHealth != 0 and player.myTeam[1].myCurrentHealth != 0 and
        player.myTeam[2].myCurrentHealth != 0) or (computer.myTeam[0].myCurrentHealth != 0 and
