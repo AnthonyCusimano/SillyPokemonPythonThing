@@ -31,12 +31,17 @@ while (player.myTeam[0].myCurrentHealth != 0 and player.myTeam[1].myCurrentHealt
               player.myTeam[2].myBaseStats[0])
 
     elif mover == 1:
-        print("0: ", player.myTeam[0].myMoves[0].myName)
-        print("1: ", player.myTeam[0].myMoves[1].myName)
-        print("2: ", player.myTeam[0].myMoves[2].myName)
-        print("3: ", player.myTeam[0].myMoves[3].myName)
 
-    moveModifier = int(input())
+        if player.myTeam[0].myItem.myIDNumber == 4 and player.myTeam[0].myChoiceMade:
+            moveModifier = player.myTeam[0].myChoiceID
+
+        else:
+            print("0: ", player.myTeam[0].myMoves[0].myName)
+            print("1: ", player.myTeam[0].myMoves[1].myName)
+            print("2: ", player.myTeam[0].myMoves[2].myName)
+            print("3: ", player.myTeam[0].myMoves[3].myName)
+            
+            moveModifier = int(input())
 
     Gamer.ProcessTurn(mover, moveModifier, player, computer, GamerAI, player.myTeam[0], computer.myTeam[0])
 
