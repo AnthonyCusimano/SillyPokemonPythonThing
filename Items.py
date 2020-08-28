@@ -34,6 +34,7 @@ class Item:
         elif self.myName == "Choice Specs":
             self.myIDNumber = 4
 
+    # leftovers heal
     def ProcessMyEndOfTurnEffect(self, _myHolder):
         print("Item end of turn item effect")
         # leftovers
