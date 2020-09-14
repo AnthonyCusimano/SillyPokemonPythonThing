@@ -6,13 +6,17 @@ import random
 class GoodAIGen1(AI):
     pass
 
-    def __init__(self):
-        print("")
+    # self.myTrainer = _trainer
+    # self.movePicked = 0
+    def __init__(self, _trainer):
+        self.movePicked = 0
+        self.myTrainer = _trainer
 
-    #
+    # currently no action taken
     def selectMove(self, _pokemon):
         print("")
 
-    #
+    # test this LOLE
+    # currently no action taken
     def swap(self, _myParty):
         print("")
