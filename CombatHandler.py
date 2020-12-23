@@ -72,6 +72,7 @@ class CombatHandler:
             return 1
 
     # TODO comment
+    @staticmethod
     def CalculateTypeEffectiveness(self, _move, _attacker, _defender):
         print("prototype method CalculateTypeEffectiveness called")
         # leaving this blank cus I need to come up with a good way to do this using the chart above this class
