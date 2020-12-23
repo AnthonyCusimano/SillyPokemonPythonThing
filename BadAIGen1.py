@@ -17,6 +17,7 @@ class BadAIGen1(AI):
     # pick a random move unless we have an active choice item
     def selectMove(self, _pokemon):
 
+        # choice item check
         if _pokemon.myItem.myIDNumber == 4 and _pokemon.myChoiceMade:
             return _pokemon.myMoves[_pokemon.myChoiceID]
 
